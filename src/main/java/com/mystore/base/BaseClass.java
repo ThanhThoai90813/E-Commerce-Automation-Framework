@@ -59,7 +59,6 @@ public class BaseClass {
             WebDriverManager.firefoxdriver().setup();
             webDriver.set(new FirefoxDriver());
         } else if (browserName.equalsIgnoreCase("Edge")) {
-            WebDriverManager.edgedriver().setup();
             webDriver.set(new EdgeDriver());
         }
 

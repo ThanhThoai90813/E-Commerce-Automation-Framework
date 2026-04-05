@@ -7,8 +7,11 @@
     <test thread-count="5" name="Test_All">
         <parameter name="browser" value="Chrome"></parameter>
         <classes>
-            <class name="com.mystore.testcases.TC1_RegisterUser" />
+            <class name="com.mystore.testcases.TC0_IndexPageTest" />
+            <class name="com.mystore.testcases.TC1_RegisterTest" />
             <class name="com.mystore.testcases.TC2_LoginTest" />
+            <class name="com.mystore.testcases.TC3_LogoutTest" />
+            <class name="com.mystore.testcases.TC4_RegisterFailedTest" />
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

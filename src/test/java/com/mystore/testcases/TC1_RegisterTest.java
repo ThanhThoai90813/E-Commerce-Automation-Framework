@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class TC1_RegisterUser extends BaseClass {
+public class TC1_RegisterTest extends BaseClass {
 
     IndexPage indexPage;
     LoginSignUpPage loginSignUpPage;

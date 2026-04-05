@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class TC2_LoginTest extends BaseClass {
+public class TC3_LogoutTest extends BaseClass {
 
     IndexPage indexPage;
     LoginSignUpPage loginSignUpPage;
@@ -35,10 +35,10 @@ public class TC2_LoginTest extends BaseClass {
             groups = {"Smoke", "Sanity"}
     )
 
-    public void loginCorrectTest(String email, String password) {
-        Log.startTestCase("loginCorrectTest");
-        indexPage = new IndexPage();
+    public void logOutTest(String email, String password) {
+        Log.startTestCase("logOutTest");
 
+        indexPage = new IndexPage();
         indexPage.validateLogo();
         Log.info("Verify that home page is visible");
 
@@ -51,32 +51,11 @@ public class TC2_LoginTest extends BaseClass {
 
         homePage.verifyUsernameLogged();
         Log.info("Verify that 'Logged in as username' is visible");
+        indexPage = homePage.clickLogoutBtn();
+        Assert.assertTrue(indexPage.verifyLoginBtn());
+        Log.info("Verify Login Button");
 
-        Log.endTestCase("loginCorrectTest");
+        Log.endTestCase("logOutTest");
     }
-
-    @Test(
-            dataProvider = "invalidLoginData",
-            dataProviderClass = DataProviders.class,
-            groups = {"Smoke", "Sanity"}
-    )
-    public void loginInCorrectTest(String email, String password) {
-        Log.startTestCase("loginInCorrectTest");
-        indexPage = new IndexPage();
-
-        indexPage.validateLogo();
-        Log.info("Verify that home page is visible");
-
-        loginSignUpPage = indexPage.clickSignupLoginBtn();
-        Assert.assertTrue(loginSignUpPage.verifyLoginTitle());
-        Log.info("Verify 'Login to your account' is visible");
-
-        homePage = loginSignUpPage.Login(email, password);
-        Assert.assertTrue(loginSignUpPage.incorrectLoginMsgCheck());
-        Log.info("Verify that incorrect login");
-
-        Log.endTestCase("loginInCorrectTest");
-    }
-
 
 }

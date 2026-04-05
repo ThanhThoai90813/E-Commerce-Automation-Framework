@@ -12,6 +12,7 @@
             </run>
         </groups>
         <classes>
+            <class name="com.mystore.testcases.TC1_RegisterTest"></class>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

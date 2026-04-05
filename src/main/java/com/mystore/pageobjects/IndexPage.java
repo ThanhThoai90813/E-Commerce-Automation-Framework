@@ -51,5 +51,10 @@ public class IndexPage extends BaseClass {
         return new LoginSignUpPage();
     }
 
+    public boolean verifyLoginBtn() {
+        action.fluentWait(getDriver(), signupLoginNav, 5);
+        return action.isDisplayed(getDriver(), signupLoginNav);
+    }
+
 
 }

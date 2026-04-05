@@ -39,6 +39,11 @@ public class HomePage extends BaseClass {
         return action.isDisplayed(getDriver(), username);
     }
 
+    public IndexPage clickLogoutBtn() {
+        action.JSClick(getDriver(), logoutNav);
+        return new IndexPage();
+    }
+
     public String getCurrURL() {
         String homePageURL = getDriver().getCurrentUrl();
         return homePageURL;

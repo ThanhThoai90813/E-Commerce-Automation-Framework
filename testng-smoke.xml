@@ -12,7 +12,9 @@
             </run>
         </groups>
         <classes>
-            <class name="com.mystore.testcases.TC2_LoginTest" />
+<!--            <class name="com.mystore.testcases.TC2_LoginTest" />-->
+<!--            <class name="com.mystore.testcases.TC3_LogoutTest" />-->
+            <class name="com.mystore.testcases.TC4_RegisterFailedTest" />
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

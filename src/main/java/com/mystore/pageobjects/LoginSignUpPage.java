@@ -19,6 +19,8 @@ public class LoginSignUpPage extends BaseClass {
     WebElement signUpEmailField;
     @FindBy(xpath = "//button[@data-qa='signup-button']")
     WebElement signUpBtn;
+    @FindBy(xpath = "//p[contains(text(), 'Email Address already exist!')]")
+    WebElement incorrectSignUpMsg;
 
     //Login
     @FindBy(xpath = "//h2[contains(text(), 'Login to your account')]")
@@ -29,6 +31,8 @@ public class LoginSignUpPage extends BaseClass {
     WebElement loginPassword;
     @FindBy(xpath = "//button[@data-qa='login-button']")
     WebElement loginButton;
+    @FindBy(xpath = "//p[contains(text(), 'Your email or password is incorrect!')]")
+    WebElement incorrectLoginMsg;
 
     public LoginSignUpPage() {
         PageFactory.initElements(getDriver(), this);
@@ -40,6 +44,14 @@ public class LoginSignUpPage extends BaseClass {
 
     public boolean verifyLoginTitle() {
         return action.isDisplayed(getDriver(), verifyLoginTitle);
+    }
+
+    public boolean incorrectLoginMsgCheck() {
+        return action.isDisplayed(getDriver(), incorrectLoginMsg);
+    }
+
+    public boolean incorrectSignUpMsgCheck() {
+        return action.isDisplayed(getDriver(), incorrectSignUpMsg);
     }
 
     public HomePage Login(String eml, String pw){
