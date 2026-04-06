@@ -19,8 +19,8 @@
 <!--            <class name="com.mystore.testcases.TC6_TestCasePageTest" />-->
 <!--            <class name="com.mystore.testcases.TC7_ProductsTest" />-->
 <!--            <class name="com.mystore.testcases.TC8_SearchProductTest" />-->
-            <class name="com.mystore.testcases.TC9_SubscriptionTest" />
-
+<!--            <class name="com.mystore.testcases.TC9_SubscriptionTest" />-->
+            <class name="com.mystore.testcases.TC10_AddToCartTest" />
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

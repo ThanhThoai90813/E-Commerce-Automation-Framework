@@ -39,18 +39,22 @@ public class LoginSignUpPage extends BaseClass {
     }
 
     public boolean verifySignUpTitle() {
+        action.fluentWait(getDriver(), verifySignUpTitle, 5);
         return action.isDisplayed(getDriver(), verifySignUpTitle);
     }
 
     public boolean verifyLoginTitle() {
+        action.fluentWait(getDriver(), verifyLoginTitle, 5);
         return action.isDisplayed(getDriver(), verifyLoginTitle);
     }
 
     public boolean incorrectLoginMsgCheck() {
+        action.fluentWait(getDriver(), incorrectLoginMsg, 5);
         return action.isDisplayed(getDriver(), incorrectLoginMsg);
     }
 
     public boolean incorrectSignUpMsgCheck() {
+        action.fluentWait(getDriver(), incorrectSignUpMsg, 5);
         return action.isDisplayed(getDriver(), incorrectSignUpMsg);
     }
 

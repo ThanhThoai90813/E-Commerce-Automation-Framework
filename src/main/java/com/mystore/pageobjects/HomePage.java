@@ -10,12 +10,19 @@ public class HomePage extends BaseClass {
 
     Action action = new Action();
 
+    //Menu Item
     @FindBy(xpath = "//a[contains(text(),'Logged in as')]/b")
     WebElement username;
     @FindBy(xpath = "//a[contains(text(),'Logout')]")
     WebElement logoutNav;
     @FindBy(xpath = "//a[contains(text(),'Delete Account')]")
     WebElement deleteAccountNav;
+    @FindBy(xpath = "//a[contains(text(),'Cart')]")
+    WebElement cartNav;
+
+    //Product
+    @FindBy(css = "a[href*='product_details']")
+    WebElement viewProductBtn;
 
     public HomePage() {
         PageFactory.initElements(getDriver(), this);
@@ -47,6 +54,17 @@ public class HomePage extends BaseClass {
     public String getCurrURL() {
         String homePageURL = getDriver().getCurrentUrl();
         return homePageURL;
+    }
+
+    public ProductDetailPage clickViewProduct() {
+        action.scrollByVisibilityOfElement(getDriver(), viewProductBtn);
+        action.click(getDriver(), viewProductBtn);
+        return new ProductDetailPage();
+    }
+
+    public CartPage clickCartNav() {
+        action.click(getDriver(), cartNav);
+        return new CartPage();
     }
 
 }

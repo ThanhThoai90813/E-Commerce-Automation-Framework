@@ -28,7 +28,7 @@ public class TC6_TestCasePageTest extends BaseClass {
     }
 
     @Test(groups = {"Smoke"})
-    public void verifyTestCasePage() {
+    public void verifyTestCasePageTest() {
         Log.startTestCase("verifyTestCasePage");
 
         indexPage = new IndexPage();

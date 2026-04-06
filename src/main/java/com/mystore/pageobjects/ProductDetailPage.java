@@ -25,11 +25,22 @@ public class ProductDetailPage extends BaseClass {
     @FindBy(xpath = "//div[@class='view-product']//img")
     WebElement productImage;
 
+    //Add To Cart Flow
+    @FindBy(id = "quantity")
+    WebElement quantity;
+    @FindBy(xpath = "//*[@id=\"cartModal\"]//h4")
+    WebElement addToCartMessage;
+    @FindBy(xpath = "//*[@id=\"cartModal\"]/div//p[2]/a/u")
+    WebElement ViewCartText;
+    @FindBy(xpath = "/html/body/section//span/button")
+    WebElement AddToCartBtn;
+
     public ProductDetailPage() {
         PageFactory.initElements(getDriver(), this);
     }
 
     public boolean verifyProductName() {
+        action.fluentWait(getDriver(), productName, 10);
         return action.isDisplayed(getDriver(), productName);
     }
 
@@ -55,6 +66,24 @@ public class ProductDetailPage extends BaseClass {
 
     public boolean verifyProductImg() {
         return action.isDisplayed(getDriver(), productImage);
+    }
+
+    public void enterQuantity(String Quantity) {
+        action.type(quantity, Quantity);
+    }
+
+    public void clickOnAddToCart() {
+        action.click(getDriver() ,AddToCartBtn);
+    }
+
+    public boolean validateAddToCart() {
+        action.fluentWait(getDriver(), addToCartMessage, 5);
+        return action.isDisplayed(getDriver(), addToCartMessage);
+    }
+
+    public CartPage clickViewCartText() {
+        action.JSClick(getDriver(), ViewCartText);
+        return new CartPage();
     }
 
 }

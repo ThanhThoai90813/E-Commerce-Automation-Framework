@@ -63,6 +63,7 @@ public class AccountCreationPage extends BaseClass {
     }
 
     public boolean verifyAccountCreationPage() {
+        action.fluentWait(getDriver(), accountCreationPageTitle, 10);
         return action.isDisplayed(getDriver(), accountCreationPageTitle);
     }
 
@@ -151,7 +152,7 @@ public class AccountCreationPage extends BaseClass {
 
     //Confirm
     public AccountCreatedPage clickCreateAccountBtn() {
-        action.click(getDriver(), createAccountBtn);
+        action.JSClick(getDriver(), createAccountBtn);
         return new AccountCreatedPage();
     }
 

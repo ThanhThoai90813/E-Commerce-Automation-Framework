@@ -5,14 +5,15 @@
         <listener class-name="com.mystore.utility.ListenerClass"></listener>
     </listeners>
     <test thread-count="5" name="Regression">
-        <parameter name="browser" value="Chrome"></parameter>
+        <parameter name="browser" value="Edge"></parameter>
         <groups>
             <run>
                 <include name="Regression"></include>
             </run>
         </groups>
         <classes>
-            <class name="com.mystore.testcases.TC1_RegisterTest"></class>
+<!--            <class name="com.mystore.testcases.TC1_RegisterTest"></class>-->
+            <class name="com.mystore.testcases.TC11_PlaceOrderTest"></class>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

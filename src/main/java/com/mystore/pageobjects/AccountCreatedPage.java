@@ -27,6 +27,7 @@ public class AccountCreatedPage extends BaseClass {
     }
 
     public boolean validateCreatedMessage() {
+        action.fluentWait(getDriver(), confirmCreatedMess, 5);
         return action.isDisplayed(getDriver(), confirmCreatedMess);
     }
 

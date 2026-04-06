@@ -48,6 +48,7 @@ public class IndexPage extends BaseClass {
     }
 
     public boolean validateLogo() {
+        action.fluentWait(getDriver(), myStoreLogo, 5);
         return action.isDisplayed(getDriver(), myStoreLogo);
     }
 
