@@ -20,7 +20,9 @@
 <!--            <class name="com.mystore.testcases.TC7_ProductsTest" />-->
 <!--            <class name="com.mystore.testcases.TC8_SearchProductTest" />-->
 <!--            <class name="com.mystore.testcases.TC9_SubscriptionTest" />-->
-            <class name="com.mystore.testcases.TC10_AddToCartTest" />
+<!--            <class name="com.mystore.testcases.TC10_AddToCartTest" />-->
+            <class name="com.mystore.testcases.TC16_AddReviewProductTest" />
+
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

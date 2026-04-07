@@ -52,6 +52,11 @@ public class IndexPage extends BaseClass {
         return action.isDisplayed(getDriver(), myStoreLogo);
     }
 
+    public boolean verifyProductsIcon() {
+        action.fluentWait(getDriver(), productsNav, 5);
+        return action.isDisplayed(getDriver(), productsNav);
+    }
+
     public boolean getCarouselTitle() {
         return action.isDisplayed(getDriver(), carouselTitle);
     }

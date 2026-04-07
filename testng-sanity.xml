@@ -12,7 +12,10 @@
             </run>
         </groups>
         <classes>
-                <class name="com.mystore.testcases.TC7_ProductsTest"></class>
+<!--                <class name="com.mystore.testcases.TC7_ProductsTest"></class>-->
+<!--            <class name="com.mystore.testcases.TC14_RemoveProductsFromCartTest"></class>-->
+            <class name="com.mystore.testcases.TC15_SearchAndAddTest"></class>
+
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

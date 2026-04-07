@@ -35,6 +35,20 @@ public class ProductDetailPage extends BaseClass {
     @FindBy(xpath = "/html/body/section//span/button")
     WebElement AddToCartBtn;
 
+    //Review Form
+    @FindBy(xpath = "//a[contains(text(),'Write Your Review')]")
+    WebElement reviewTitle;
+    @FindBy (id = "name")
+    WebElement reviewerName;
+    @FindBy (id = "email")
+    WebElement reviewerEmail;
+    @FindBy (id = "review")
+    WebElement review;
+    @FindBy (id = "button-review")
+    WebElement reviewSubmitBtn;
+    @FindBy (xpath = "//span[contains(text(),'Thank you for your review.')]")
+    WebElement successAlert;
+
     public ProductDetailPage() {
         PageFactory.initElements(getDriver(), this);
     }
@@ -84,6 +98,27 @@ public class ProductDetailPage extends BaseClass {
     public CartPage clickViewCartText() {
         action.JSClick(getDriver(), ViewCartText);
         return new CartPage();
+    }
+
+    public boolean verifyReviewForm() {
+        action.scrollByVisibilityOfElement(getDriver(), reviewerName);
+        action.fluentWait(getDriver(), reviewTitle, 5 );
+        return action.isDisplayed(getDriver(), reviewTitle);
+    }
+
+    public void inputReviewForm(String name, String email, String text) {
+        action.type(reviewerName, name);
+        action.type(reviewerEmail, email);
+        action.type(review, text);
+    }
+
+    public void clickSubmitReviewBtn() {
+        action.click(getDriver(), reviewSubmitBtn);
+    }
+
+    public boolean verifySuccessReviewMsg() {
+        action.fluentWait(getDriver(), successAlert, 5);
+        return action.isDisplayed(getDriver(), successAlert);
     }
 
 }

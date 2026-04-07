@@ -13,7 +13,9 @@
         </groups>
         <classes>
 <!--            <class name="com.mystore.testcases.TC1_RegisterTest"></class>-->
-            <class name="com.mystore.testcases.TC11_PlaceOrderTest"></class>
+<!--            <class name="com.mystore.testcases.TC11_RegisterWhileCheckoutTest"></class>-->
+<!--            <class name="com.mystore.testcases.TC12_RegisterBeforeCheckoutTest"></class>-->
+            <class name="com.mystore.testcases.TC13_LoginBeforeCheckoutTest"></class>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -15,21 +15,44 @@ public class CheckOutPage extends BaseClass {
 
     @FindBy(xpath = "//*[@id=\"do_action\"]/div[1]//a")
     WebElement CheckoutBtn;
-
     @FindBy(xpath = "//td[@class='cart_price']/p")
     List<WebElement> unitPrices;
-
     @FindBy(xpath = "//td[@class='cart_quantity']/button")
     List<WebElement> cartQuantity;
-
     @FindBy(xpath = "//tr[not(@id)]//p[@class='cart_total_price']")
     WebElement totalAmount;
-
     @FindBy(xpath = "//*[@id=\"ordermsg\"]/textarea")
     WebElement orderMsgField;
-
     @FindBy(xpath = "//a[contains(@class,'check_out')]")
     WebElement placeOrderBtn;
+
+    //  billing address
+    @FindBy(id = "address_invoice")
+    WebElement addressInvoiceBlock;
+    @FindBy(css = "#address_invoice .address_firstname")
+    WebElement invoiceName;
+    @FindBy(css = "#address_invoice .address_address1")
+    List<WebElement> invoiceAddressLines;
+    @FindBy(css = "#address_invoice .address_city")
+    WebElement invoiceCity;
+    @FindBy(css = "#address_invoice .address_country_name")
+    WebElement invoiceCountry;
+    @FindBy(css = "#address_invoice .address_phone")
+    WebElement invoicePhone;
+
+    //  delivery address
+    @FindBy(id = "address_delivery")
+    WebElement addressDeliveryBlock;
+    @FindBy(css = "#address_delivery .address_firstname")
+    WebElement deliveryName;
+    @FindBy(css = "#address_delivery .address_address1")
+    List<WebElement> deliveryAddressLines;
+    @FindBy(css = "#address_delivery .address_city")
+    WebElement deliveryCity;
+    @FindBy(css = "#address_delivery .address_country_name")
+    WebElement deliveryCountry;
+    @FindBy(css = "#address_delivery .address_phone")
+    WebElement deliveryPhone;
 
     public CheckOutPage() {
         PageFactory.initElements(getDriver(), this);
@@ -77,6 +100,51 @@ public class CheckOutPage extends BaseClass {
     public PaymentPage clickPlaceOrders() {
         action.click(getDriver(), placeOrderBtn);
         return new PaymentPage();
+    }
+
+    public void verifyAddressInvoice() {
+        Assert.assertTrue(addressInvoiceBlock.isDisplayed(), "Address invoice block not displayed");
+
+        Assert.assertFalse(invoiceName.getText().trim().isEmpty(), "Name is empty");
+
+        // check ít nhất 1 dòng address có data
+        boolean hasAddress = false;
+        for (WebElement addr : invoiceAddressLines) {
+            if (!addr.getText().trim().isEmpty()) {
+                hasAddress = true;
+                break;
+            }
+        }
+        Assert.assertTrue(hasAddress, "Address is empty");
+
+        Assert.assertFalse(invoiceCity.getText().trim().isEmpty(), "City is empty");
+        Assert.assertFalse(invoiceCountry.getText().trim().isEmpty(), "Country is empty");
+        Assert.assertFalse(invoicePhone.getText().trim().isEmpty(), "Phone is empty");
+    }
+
+    public void verifyAddressDelivery() {
+        Assert.assertTrue(addressDeliveryBlock.isDisplayed(), "Delivery address block not displayed");
+
+        Assert.assertFalse(deliveryName.getText().trim().isEmpty(), "Delivery name is empty");
+
+        boolean hasAddress = false;
+        for (WebElement addr : deliveryAddressLines) {
+            if (!addr.getText().trim().isEmpty()) {
+                hasAddress = true;
+                break;
+            }
+        }
+        Assert.assertTrue(hasAddress, "Delivery address is empty");
+
+        Assert.assertFalse(deliveryCity.getText().trim().isEmpty(), "Delivery city is empty");
+        Assert.assertFalse(deliveryCountry.getText().trim().isEmpty(), "Delivery country is empty");
+        Assert.assertFalse(deliveryPhone.getText().trim().isEmpty(), "Delivery phone is empty");
+    }
+
+    public void verifyBothAddresses() {
+        action.fluentWait(getDriver(), addressInvoiceBlock, 10 );
+        verifyAddressInvoice();
+        verifyAddressDelivery();
     }
 
 }

@@ -49,7 +49,7 @@ public class TC2_LoginTest extends BaseClass {
         homePage = loginSignUpPage.Login(email, password);
         Log.info("Enter correct email address and password");
 
-        homePage.verifyUsernameLogged();
+        Assert.assertTrue(homePage.verifyUsernameLogged());
         Log.info("Verify that 'Logged in as username' is visible");
 
         Log.endTestCase("loginCorrectTest");

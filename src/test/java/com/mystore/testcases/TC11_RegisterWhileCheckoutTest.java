@@ -10,10 +10,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class TC11_PlaceOrderTest extends BaseClass {
+public class TC11_RegisterWhileCheckoutTest extends BaseClass {
 
     IndexPage indexPage;
-    AllProductPage allProductPage;
     ProductDetailPage productDetailPage;
     CartPage cartPage;
     HomePage homePage;

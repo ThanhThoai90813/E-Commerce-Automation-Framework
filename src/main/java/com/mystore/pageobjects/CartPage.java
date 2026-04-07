@@ -23,6 +23,8 @@ public class CartPage extends BaseClass {
     WebElement successSubMeg;
     @FindBy(id = "cart_items")
     WebElement verifyCart;
+    @FindBy(xpath = "//b[contains(text(),'Cart is empty!')]")
+    WebElement cartEmptyMsg;
 
     //Cart Table
     @FindBy(xpath = "//table[@id='cart_info_table']//tbody//tr")
@@ -33,6 +35,8 @@ public class CartPage extends BaseClass {
     List<WebElement> cartQuantities;
     @FindBy(xpath = "//td[@class='cart_total']/p")
     List<WebElement> totalPrices;
+    @FindBy(className = "cart_quantity_delete")
+    WebElement removeBtn;
 
 
     @FindBy(xpath = "//*[@id=\"do_action\"]/div[1]//a")
@@ -112,6 +116,15 @@ public class CartPage extends BaseClass {
     public LoginSignUpPage clickRegisterBtnOnCheckOutMgs() {
         action.JSClick(getDriver(), RegisterBtn);
         return new LoginSignUpPage();
+    }
+
+    public void clickRemoveProductBtn() {
+        action.click(getDriver(), removeBtn);
+    }
+
+    public boolean verifyCartEmptyMSg() {
+        action.fluentWait(getDriver(), cartEmptyMsg, 10);
+        return action.isDisplayed(getDriver(), cartEmptyMsg);
     }
 
 }
