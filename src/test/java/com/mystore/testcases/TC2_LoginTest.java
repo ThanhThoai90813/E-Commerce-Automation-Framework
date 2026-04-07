@@ -40,7 +40,7 @@ public class TC2_LoginTest extends BaseClass {
 
         indexPage.validateLogo();
         Log.info("Verify that home page is visible");
-
+        getDriver().navigate().refresh();
         loginSignUpPage = indexPage.clickSignupLoginBtn();
         Assert.assertTrue(loginSignUpPage.verifyLoginTitle());
         Log.info("Verify 'Login to your account' is visible");
@@ -65,7 +65,7 @@ public class TC2_LoginTest extends BaseClass {
 
         indexPage.validateLogo();
         Log.info("Verify that home page is visible");
-
+        getDriver().navigate().refresh();
         loginSignUpPage = indexPage.clickSignupLoginBtn();
         Assert.assertTrue(loginSignUpPage.verifyLoginTitle());
         Log.info("Verify 'Login to your account' is visible");

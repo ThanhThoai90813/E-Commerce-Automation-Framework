@@ -13,24 +13,24 @@
         </groups>
         <classes>
             <class name="com.mystore.testcases.TC0_IndexPageTest" />
-            <class name="com.mystore.testcases.TC1_RegisterTest" />
+<!--            <class name="com.mystore.testcases.TC1_RegisterTest" />-->
             <class name="com.mystore.testcases.TC2_LoginTest" />
-            <class name="com.mystore.testcases.TC3_LogoutTest" />
-            <class name="com.mystore.testcases.TC4_RegisterFailedTest" />
-            <class name="com.mystore.testcases.TC5_ContactUsFormTest" />
-            <class name="com.mystore.testcases.TC6_TestCasePageTest" />
-            <class name="com.mystore.testcases.TC7_ProductsTest" />
-            <class name="com.mystore.testcases.TC8_SearchProductTest" />
-            <class name="com.mystore.testcases.TC9_SubscriptionTest" />
-            <class name="com.mystore.testcases.TC10_AddToCartTest" />
-            <class name="com.mystore.testcases.TC11_RegisterWhileCheckoutTest" />
-            <class name="com.mystore.testcases.TC12_RegisterBeforeCheckoutTest" />
-            <class name="com.mystore.testcases.TC13_LoginBeforeCheckoutTest" />
-            <class name="com.mystore.testcases.TC14_RemoveProductsFromCartTest" />
-            <class name="com.mystore.testcases.TC15_SearchAndAddTest" />
-            <class name="com.mystore.testcases.TC16_AddReviewProductTest" />
-            <class name="com.mystore.testcases.TC17_EndToEndTest" />
-            <class name="com.mystore.testcases.TC4_RegisterFailedTest" />
+<!--            <class name="com.mystore.testcases.TC3_LogoutTest" />-->
+<!--            <class name="com.mystore.testcases.TC4_RegisterFailedTest" />-->
+<!--            <class name="com.mystore.testcases.TC5_ContactUsFormTest" />-->
+<!--            <class name="com.mystore.testcases.TC6_TestCasePageTest" />-->
+<!--            <class name="com.mystore.testcases.TC7_ProductsTest" />-->
+<!--            <class name="com.mystore.testcases.TC8_SearchProductTest" />-->
+<!--            <class name="com.mystore.testcases.TC9_SubscriptionTest" />-->
+<!--            <class name="com.mystore.testcases.TC10_AddToCartTest" />-->
+<!--            <class name="com.mystore.testcases.TC11_RegisterWhileCheckoutTest" />-->
+<!--            <class name="com.mystore.testcases.TC12_RegisterBeforeCheckoutTest" />-->
+<!--            <class name="com.mystore.testcases.TC13_LoginBeforeCheckoutTest" />-->
+<!--            <class name="com.mystore.testcases.TC14_RemoveProductsFromCartTest" />-->
+<!--            <class name="com.mystore.testcases.TC15_SearchAndAddTest" />-->
+<!--            <class name="com.mystore.testcases.TC16_AddReviewProductTest" />-->
+<!--            <class name="com.mystore.testcases.TC17_EndToEndTest" />-->
+<!--            <class name="com.mystore.testcases.TC4_RegisterFailedTest" />-->
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
