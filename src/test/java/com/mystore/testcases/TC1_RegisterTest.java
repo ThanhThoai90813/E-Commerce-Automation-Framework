@@ -68,6 +68,7 @@ public class TC1_RegisterTest extends BaseClass {
         accountCreationPage = loginSignUpPage.Signup(name, email);
 
         Log.info("Verify that 'ENTER ACCOUNT INFORMATION' is visible");
+        getDriver().navigate().refresh();
         Assert.assertTrue(accountCreationPage.verifyAccountCreationPage());
 
         accountCreationPage.selectGender(gender);

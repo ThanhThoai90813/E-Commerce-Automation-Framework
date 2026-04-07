@@ -66,7 +66,6 @@ public class TC12_RegisterBeforeCheckoutTest extends BaseClass {
         Assert.assertTrue(indexPage.validateLogo());
         getDriver().navigate().refresh();
 
-
         //Register account
         Log.info("Click on 'Signup / Login' button");
         loginSignUpPage = indexPage.clickSignupLoginBtn();

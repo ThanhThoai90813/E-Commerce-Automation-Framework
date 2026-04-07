@@ -47,6 +47,7 @@ public class TC5_ContactUsFormTest extends BaseClass {
         Log.startTestCase("contactsUsFormTest");
         indexPage = new IndexPage();
         Assert.assertTrue(indexPage.validateLogo());
+        getDriver().navigate().refresh();
         contactUsPage = indexPage.clickContactUsNav();
 
         Assert.assertTrue(contactUsPage.verifyContactUsPage());

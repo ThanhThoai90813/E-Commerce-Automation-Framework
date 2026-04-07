@@ -35,7 +35,7 @@ public class TC9_SubscriptionTest extends BaseClass {
 
         indexPage = new IndexPage();
         Assert.assertTrue(indexPage.validateLogo());
-
+        getDriver().navigate().refresh();
         indexPage.inputSubField("subEmail@gmail.com");
         indexPage.clickSubBtn();
         Log.info("Click sub button");
@@ -52,7 +52,7 @@ public class TC9_SubscriptionTest extends BaseClass {
 
         indexPage = new IndexPage();
         Assert.assertTrue(indexPage.validateLogo());
-
+        getDriver().navigate().refresh();
         cartPage = indexPage.clickCartNav();
         Assert.assertTrue(cartPage.verifyCartPage());
         Log.info("Verify Cart Page");

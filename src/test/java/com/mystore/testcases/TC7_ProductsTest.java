@@ -34,6 +34,7 @@ public class TC7_ProductsTest extends BaseClass {
 
         indexPage = new IndexPage();
         Assert.assertTrue(indexPage.validateLogo());
+        getDriver().navigate().refresh();
         allProductPage = indexPage.clickProductsNav();
 
         Assert.assertTrue(allProductPage.verifyProductPage());
@@ -63,7 +64,7 @@ public class TC7_ProductsTest extends BaseClass {
         indexPage = new IndexPage();
         homePage = new HomePage();
         Assert.assertTrue(indexPage.validateLogo());
-
+        getDriver().navigate().refresh();
         productDetailPage = homePage.clickViewProduct();
         Log.info("Verify that detail detail is visible: product name, category, price, availability, condition, brand");
         Assert.assertTrue(productDetailPage.verifyProductName());

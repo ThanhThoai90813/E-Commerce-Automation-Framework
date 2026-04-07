@@ -734,7 +734,7 @@ public class Action extends BaseClass implements ActionInterface {
             e.getMessage();
         }
         // This new path for jenkins
-        String newImageString = "http://localhost:8082/job/MyStoreProject/ws/MyStoreProject/ScreenShots/" + filename + "_"
+        String newImageString = "http://localhost:8082/job/E-Commerce%20Automation%20Framework%20(Selenium%20+%20TestNG)/ws/ScreenShots/" + filename + "_"
                 + dateName + ".png";
         return newImageString;
     }

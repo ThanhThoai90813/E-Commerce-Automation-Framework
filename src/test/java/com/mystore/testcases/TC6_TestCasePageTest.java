@@ -34,6 +34,7 @@ public class TC6_TestCasePageTest extends BaseClass {
         indexPage = new IndexPage();
 
         Assert.assertTrue(indexPage.validateLogo());
+        getDriver().navigate().refresh();
         testCasePage = indexPage.clickTestCaseNav();
         Assert.assertTrue(testCasePage.verifyTestCasePageTitle());
         Log.info("Verify TestCase Page");

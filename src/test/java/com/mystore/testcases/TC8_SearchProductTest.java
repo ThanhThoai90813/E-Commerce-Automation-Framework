@@ -39,6 +39,7 @@ public class TC8_SearchProductTest extends BaseClass {
 
         indexPage = new IndexPage();
         Assert.assertTrue(indexPage.validateLogo());
+        getDriver().navigate().refresh();
         allProductPage = indexPage.clickProductsNav();
 
         Assert.assertTrue(allProductPage.verifyProductPage());

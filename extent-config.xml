@@ -19,7 +19,7 @@
         <!-- report name - displayed at top-nav -->
         <reportName>E-CommerceProject Report
          <![CDATA[
-                <img src='D:\CODE\E-Commerce Automation Framework (Selenium + TestNG)\E-Commerce Automation Framework\Logo\logo.jpg'/>
+                <img src='http://localhost:8082/job/E-Commerce%20Automation%20Framework%20(Selenium%20+%20TestNG)/ws/Logo/logo.png'/>
             ]]>
         </reportName>
         

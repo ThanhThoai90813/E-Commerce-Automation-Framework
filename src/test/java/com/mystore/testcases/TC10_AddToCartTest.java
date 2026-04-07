@@ -34,14 +34,14 @@ public class TC10_AddToCartTest extends BaseClass {
 
         indexPage = new IndexPage();
         Assert.assertTrue(indexPage.validateLogo());
-
+        getDriver().navigate().refresh();
         //Product Page
         allProductPage = indexPage.clickProductsNav();
         Assert.assertTrue(allProductPage.verifyProductPage());
         Log.info("Verify user is navigated to ALL PRODUCTS page successfully");
         Assert.assertTrue(allProductPage.isProductAvailable());
         Log.info("Verify the products list is visible");
-
+        getDriver().navigate().refresh();
         //Add to Cart
         allProductPage.clickNormalAddToCartProduct1();
         allProductPage.clickContinueShopping();

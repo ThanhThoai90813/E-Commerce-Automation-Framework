@@ -40,7 +40,7 @@ public class TC3_LogoutTest extends BaseClass {
         indexPage = new IndexPage();
         indexPage.validateLogo();
         Log.info("Verify that home page is visible");
-
+        getDriver().navigate().refresh();
         loginSignUpPage = indexPage.clickSignupLoginBtn();
         Assert.assertTrue(loginSignUpPage.verifyLoginTitle());
         Log.info("Verify 'Login to your account' is visible");

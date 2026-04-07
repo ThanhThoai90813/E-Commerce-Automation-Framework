@@ -41,7 +41,7 @@ public class TC4_RegisterFailedTest extends BaseClass {
 
         indexPage.validateLogo();
         Log.info("Verify that home page is visible");
-
+        getDriver().navigate().refresh();
         loginSignUpPage = indexPage.clickSignupLoginBtn();
         Assert.assertTrue(loginSignUpPage.verifySignUpTitle());
         Log.info("Verify 'New User Signup!' is visible");
